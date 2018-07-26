@@ -1,4 +1,4 @@
-# Стартовый проект с gulp и Pug
+# Стартовый проект с Gulp и Pug
 
 <table>
   <thead>
