@@ -1,0 +1,8 @@
+// Глобальные подключения
+@import 'variables.scss';
+@import 'fonts.scss';
+@import 'base.scss';
+
+// Блоки.
+@import './src/blocks/header/header.scss';
+@import './src/blocks/footer/footer.scss';
