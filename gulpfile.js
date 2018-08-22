@@ -18,7 +18,6 @@ const mqpacker = require('css-mqpacker');
 const objectFitImages = require('postcss-object-fit-images');
 const del = require('del');
 const browserSync = require('browser-sync').create();
-// const newer = require('gulp-newer'); //
 const imagemin = require('gulp-imagemin');
 const pngquant = require('imagemin-pngquant');
 const uglify = require('gulp-uglify');
@@ -157,6 +156,7 @@ gulp.task('img:opt', function (callback) {
 });
 
 // Сборка SVG-спрайта
+// Использование: +svg("svg-user", "20px", "20px", "user")
 let spriteSvgPath = dirs.source + '/svg/';
 gulp.task('sprite:svg', function (callback) {
   if(fileExist(spriteSvgPath) !== false) {
