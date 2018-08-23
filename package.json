@@ -38,6 +38,7 @@
     "imagemin-pngquant": "^5.0.0",
     "mkdirp": "^0.5.1",
     "object-fit-images": "^3.2.3",
+    "postcss-csscomb": "^1.0.2",
     "postcss-object-fit-images": "^1.1.2"
   },
   "dependencies": {

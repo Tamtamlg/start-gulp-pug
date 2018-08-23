@@ -22,7 +22,7 @@ html(lang='ru')
     link(rel='stylesheet', href='css/style.css')
 
   body
-    //- wrapper
+    <!-- wrapper -->
     div.wrapper
       div#page-preloader
         div.spinner
@@ -33,17 +33,15 @@ html(lang='ru')
       //- header
       block header
 
-      //- content
+      <!-- content -->
       div.content
         block content
+      <!-- /content -->
 
       //- footer
       block footer
 
-      script(src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js")
-      script(src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js")
-      script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js")
-      script(src="https://cdn.jsdelivr.net/npm/svg4everybody@2.1.9/dist/svg4everybody.min.js")
+    <!-- /wrapper -->
 
-      script(src="js/ofi.min.js")
-      script(src="js/main.js")
+      block scripts
+        +scripts()
