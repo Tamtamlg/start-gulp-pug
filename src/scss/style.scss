@@ -1,7 +1,11 @@
+// Bootstrap
+@import './node_modules/bootstrap/scss/bootstrap.scss';
+
 // Глобальные подключения
 @import 'variables.scss';
 @import 'fonts.scss';
 @import 'base.scss';
+
 
 // Блоки.
 @import './src/blocks/header/header.scss';
