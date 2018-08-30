@@ -1,12 +1,12 @@
 'use strict';
 
-// Определим константу с папками
+// Папки
 const dirs = {
   source: 'src',  // папка с исходниками (путь от корня проекта)
   build: 'dist',  // папка с результатом работы (путь от корня проекта)
 };
 
-// Определим необходимые инструменты
+// Инструменты
 const gulp = require('gulp');
 const gulpSequence = require('gulp-sequence');
 const rename = require('gulp-rename');
@@ -33,6 +33,7 @@ const wait = require('gulp-wait');
 const htmlbeautify = require('gulp-html-beautify');
 const pug = require('gulp-pug');
 
+// Настройки для csscomb
 const csscombJson = {
   "exclude": [
       ".git/**",
@@ -366,7 +367,7 @@ const csscombJson = {
   ]
 }
 
-// Перечисление и настройки плагинов postCSS, которыми обрабатываются стилевые файлы
+// Плагины postCSS
 let postCssPlugins = [
   autoprefixer({                                           // автопрефиксер
     browsers: ['last 2 version']
@@ -375,7 +376,7 @@ let postCssPlugins = [
     sort: true
   }),
   objectFitImages(),                                       // возможность применять object-fit
-  csscomb(csscombJson),                                               // форматируем css
+  csscomb(csscombJson),                                    // форматируем css
 ];
 
 // Изображения, которые нужно копировать
@@ -564,7 +565,7 @@ gulp.task('build', function (callback) {
 // Задача по умолчанию
 gulp.task('default', ['serve']);
 
-// Локальный сервер, слежение
+// Локальный сервер
 gulp.task('serve', ['build'], function() {
   browserSync.init({
     server: dirs.build,
@@ -580,7 +581,7 @@ gulp.task('serve', ['build'], function() {
     dirs.source + '/scss/base.scss',
     dirs.source + '/blocks/**/*.scss',
   ], ['style']);
-  // Слежение за html
+  // Слежение за pug
   gulp.watch([
     dirs.source + '/**/*.pug',
   ], ['watch:pug']);
@@ -598,7 +599,7 @@ gulp.task('serve', ['build'], function() {
   gulp.watch(dirs.source + '/css/*.css', ['watch:css']);
 });
 
-// Браузерсинк с 3-м галпом — такой браузерсинк...
+
 gulp.task('watch:pug', ['pug'], reload);
 gulp.task('watch:img', ['copy:img'], reload);
 gulp.task('watch:fonts', ['copy:fonts'], reload);

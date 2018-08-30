@@ -1,5 +1,4 @@
 //- Стандартный шаблон страницы
-
 include mixins.pug
 
 doctype html
@@ -13,22 +12,18 @@ html(lang='ru')
     //- Favicon
     link(rel="shortcut icon" href="img/favicon/favicon.ico")
 
-    //- link(rel="stylesheet" href="./node_modules/bootstrap/dist/css/bootstrap.min.css")
-
     block meta
       title New-project
 
   block head
-    link(rel='stylesheet', href='css/style.css')
+    link(rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto&amp;subset=cyrillic")
+    link(rel='stylesheet' href='css/style.css')
 
   body
     <!-- wrapper -->
     div.wrapper
       div#page-preloader
         div.spinner
-          div.bounce1
-          div.bounce2
-          div.bounce3
 
       //- header
       block header

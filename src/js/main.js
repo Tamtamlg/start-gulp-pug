@@ -14,6 +14,6 @@ $(window).on('load', function () {
 
 $(function () {
 
-  // скрипты тут
+  svg4everybody();
 
 });
