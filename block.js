@@ -91,7 +91,8 @@ if (blockName) {
 
         // Если это Pug
         else if (extention == 'pug') {
-          fileContent = `mixin ${blockName}()\n  // ${blockName}\n  .${blockName}\n  // /${blockName}\n`;
+          let newLine = '\'\\n\'\n'
+          fileContent = `mixin ${blockName}()\n  = ${newLine}  // ${blockName}\n  = ${newLine}  .${blockName}\n\n  = ${newLine}  // /${blockName}\n  = ${newLine}`;
 
           let includeMixin = 'include ../blocks/' + blockName + '/' + blockName + '.pug';
 
